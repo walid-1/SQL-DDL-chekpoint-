@@ -1,0 +1,40 @@
+CREATE DATABASE SQL language 
+
+USE SQL language 
+CREATE TABLE Product
+(
+Product_Id  VARCHAR2(20) CONSTRAINT  PRIMARY KEY,
+Product_Name VARCHAR2(20) CONSTRAINT NOT NULL  ,
+Price NUMBER CONSTRAINT Positive value,
+),
+
+CREATE TABLE Customer
+(
+Customer _Id  VARCHAR2(20) CONSTRAINT  PRIMARY KEY,
+Customer _Name VARCHAR2(20) CONSTRAINT NOT NULL  ,
+Customer_Tel NUMBER ,
+),
+
+
+CREATE TABLE Orders
+(
+Customer _Id  VARCHAR2(20) CONSTRAINT  Foreign KEY,
+Product_Id  VARCHAR2(20) CONSTRAINT Foreign KEY,
+Quantity NUMBER ,
+Total_amount NUMBER
+),
+
+
+USE SQL language 
+ALTER TABLE Product
+(
+ALTER COLUMN  Category (VARCHAR2(20)),
+
+),
+
+USE SQL language 
+ALTER TABLE Orders
+(
+ADD CONSTRAINT OrderDate (DATE)
+    DEFAULT GETDATE() FOR ORDERS 
+)
